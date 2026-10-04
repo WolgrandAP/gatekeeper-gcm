@@ -32,6 +32,7 @@ O agente audita exclusivamente a função de cálculo de descontos do sistema:
 3. **Análise Inteligente (LLM Chain):** O texto do *diff* é enviado para o modelo de linguagem configurado com um *System Prompt* restrito, garantindo uma auditoria semântica e matemática precisa da função de desconto.
 4. **Saída Estruturada:** O agente retorna o veredito acompanhado de uma justificativa detalhada.
 
+![alt text](image.png)
 ---
 
 ## Como Executar o Projeto Localmente
@@ -42,7 +43,7 @@ O agente audita exclusivamente a função de cálculo de descontos do sistema:
    docker compose up -d
 
 2. **Aceder ao n8n:**
-    Abre o navegador em http://localhost:5678.
+    Abre o navegador em http://localhost:5678
 
 3. **Configurar o Fluxo:**
     *  Insere o SHA de um commit real do teu repositório que altere o ficheiro src/index.js.
