@@ -47,8 +47,11 @@ O modelo de linguagem (LLM) configurado no n8n recebe estritamente as seguintes 
 ![alt text](image.png)
 ---
 
-## Como Executar o Projeto Localmente
+## Como Executar e Configurar o Projeto
 
+O projeto foi estruturado para suportar duas abordagens de infraestrutura:
+
+### 1. Ambiente Local (Docker & Docker Compose)
 1. **Subir o ambiente n8n via Docker:**
    Na pasta onde tens o teu `docker-compose.yml`, executa:
    ```bash
@@ -60,3 +63,8 @@ O modelo de linguagem (LLM) configurado no n8n recebe estritamente as seguintes 
 3. **Configurar o Fluxo:**
     *  Insere o SHA de um commit real do teu repositório que altere o ficheiro src/index.js.
     * Executa o passo ou fluxo para validar os cenários de aprovação e reprovação.
+
+### 2. Ambiente de Produção (n8n Cloud)
+1. **Configuração do Workflow:** Workflow criado, publicado e mantido ativo diretamente na nuvem (n8n Cloud).
+2. **Integração com GitHub:**: Registo da Production Webhook URL gerada pelo n8n Cloud nas definições do repositório (Settings > Webhooks), configurada para o evento de push.
+3. **Auditoria COntínua:** Execução ponta a ponta validada em tempo real através da aba Executions da nuvem.
