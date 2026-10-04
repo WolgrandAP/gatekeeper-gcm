@@ -25,6 +25,18 @@ O agente audita exclusivamente a função de cálculo de descontos do sistema:
 
 ---
 
+## Instruções do Agente (System Prompt)
+
+O modelo de linguagem (LLM) configurado no n8n recebe estritamente as seguintes diretrizes de sistema (*System Prompt*) para balizar as suas decisões de auditoria:
+
+> "Você é um Agente Gatekeeper de Gestão de Configuração e Mudanças (GCM). Sua função é analisar o diff de commits focados exclusivamente na função calcularDesconto(preco, categoria). 
+> 
+> Regra de Negócio: O desconto máximo permitido aplicado diretamente no código é de 20% (0.20). Valores superiores exigem aprovação gerencial externa. 
+> 
+> Com base no diff recebido, emita obrigatoriamente um veredito no seguinte formato:
+> - VEREDITO: [APROVADO ou REPROVADO]
+> - JUSTIFICATIVA: [Explique o motivo, apontando claramente se houve violação do limite de 20%]."
+
 ## Fluxo de Funcionamento (Pipeline do Agente)
 
 1. **Gatilho (Webhook / Simulação Local):** O fluxo é acionado recebendo metadados de um commit do GitHub (como o `owner`, `repo` e o `head_commit.id` / `sha`).
